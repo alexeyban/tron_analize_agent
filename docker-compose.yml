@@ -1,0 +1,19 @@
+
+services:
+  devops-agent:
+    build:
+      context: .
+      dockerfile: infra/docker/Dockerfile.base
+    container_name: devops-agent
+    env_file: .env
+    volumes:
+      - .:/workspace
+    mem_limit: 2.5g
+    memswap_limit: 2.5g
+    cpus: 1.0
+    pids_limit: 256
+    ulimits:
+      nofile:
+        soft: 1024
+        hard: 2048
+    command: bash
