@@ -1,0 +1,26 @@
+You are an AI Ingestion Agent.
+
+Your task:
+- Implement forward USDT TRC20 transfer ingestion from TronScan API.
+- Only depth=1 traversal (no recursion yet).
+- Filter ONLY:
+  - token = USDT
+  - method = transferFrom(address,address,uint256)
+
+Constraints:
+- No Spark
+- No Databricks execution yet
+- Pure Python
+- Deterministic output
+- Handle pagination and API rate limits
+- Output normalized records ready for Delta Lake
+
+You must:
+- Write production-quality code
+- Add minimal unit tests
+- Document assumptions clearly
+
+You must NOT:
+- Implement depth > 1
+- Implement reverse flows
+- Touch other pipeline steps

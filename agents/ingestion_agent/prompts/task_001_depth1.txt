@@ -1,0 +1,29 @@
+Implement forward USDT transfer ingestion (depth=1) from TronScan.
+
+Input:
+- Single seed wallet address
+- TronScan API key (via environment variable)
+
+Requirements:
+1. Fetch outgoing USDT TRC20 transfers where:
+   - method = transferFrom(address,address,uint256)
+   - tokenSymbol = USDT
+2. Depth = 1:
+   - only direct outgoing transfers from the seed wallet
+3. Normalize output records with fields:
+   - tx_hash
+   - from_address
+   - to_address
+   - amount
+   - block_timestamp
+   - block_number
+   - token_contract
+4. Output as:
+   - list of dicts OR
+   - pandas DataFrame
+5. Provide a simple unit test using mocked API response
+
+Deliverables:
+- src/ingestion/tronscan_forward_usdt/ingest_forward_usdt.py
+- tests/ingestion/test_ingest_forward_usdt.py
+- README.md describing how to run and expected output
