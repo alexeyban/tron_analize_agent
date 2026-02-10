@@ -1,0 +1,15 @@
+{
+  "table": "forward_usdt_transfers",
+  "primary_key": ["tx_hash"],
+  "columns": [
+    {"name": "tx_hash", "type": "string", "nullable": false},
+    {"name": "from_address", "type": "string", "nullable": false},
+    {"name": "to_address", "type": "string", "nullable": false},
+    {"name": "amount", "type": "long", "nullable": false},
+    {"name": "block_timestamp", "type": "long", "nullable": false},
+    {"name": "block_number", "type": "long", "nullable": false},
+    {"name": "token_contract", "type": "string", "nullable": false},
+    {"name": "ingest_ts", "type": "timestamp", "nullable": false}
+  ],
+  "partition_by": ["block_number"]
+}

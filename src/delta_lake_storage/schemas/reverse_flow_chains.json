@@ -1,0 +1,17 @@
+{
+  "table": "reverse_flow_chains",
+  "primary_key": ["root_tx_hash", "level"],
+  "columns": [
+    {"name": "root_tx_hash", "type": "string", "nullable": false},
+    {"name": "level", "type": "int", "nullable": false},
+    {"name": "source_tx_hash", "type": "string", "nullable": true},
+    {"name": "source_from_address", "type": "string", "nullable": true},
+    {"name": "source_to_address", "type": "string", "nullable": true},
+    {"name": "amount", "type": "long", "nullable": false},
+    {"name": "block_timestamp", "type": "long", "nullable": false},
+    {"name": "block_number", "type": "long", "nullable": false},
+    {"name": "stop_reason", "type": "string", "nullable": false},
+    {"name": "ingest_ts", "type": "timestamp", "nullable": false}
+  ],
+  "partition_by": ["level"]
+}
