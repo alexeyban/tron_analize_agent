@@ -1,0 +1,6 @@
+{
+  "high_out_amount": 1000000000,
+  "many_receivers": 20,
+  "rapid_activity_seconds": 3600,
+  "fan_out_ratio": 0.8
+}
